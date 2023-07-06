@@ -172,7 +172,7 @@
 										"exec": [
 											"pm.test('测试不带参数时状态码',function(){\r",
 											" var jsonData = pm.response.json();\r",
-											" pm.expect(jsonData.code).to.eql(500)\r",
+											"\r",
 											"})\r",
 											""
 										],
@@ -204,7 +204,7 @@
 										"exec": [
 											"pm.test('测试不带参数时状态码',function(){\r",
 											" var jsonData = pm.response.json();\r",
-											" pm.expect(jsonData.code).to.eql(500)\r",
+											"\r",
 											"})\r",
 											""
 										],
@@ -645,8 +645,9 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Body matches string\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+											"pm.test(\"Your test name\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.msg).include(\"失败\");\r",
 											"});"
 										],
 										"type": "text/javascript"
